@@ -7,7 +7,7 @@ const initApp = async (appConfig, dbConfig) => {
   const { port } = appConfig
   try {
     await connectDB(dbConfig)
-    app.listen(port, () => console.log(`Listening on port ${port}`))
+    app.listen(port, () => console.log(`Listening on  http://localhost:${port}`))
   } catch (e) {
     console.error(e)
     process.exit(0)

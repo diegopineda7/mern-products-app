@@ -1,14 +1,14 @@
 {
-  "name": "backend",
+  "name": "mern-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
     "start-dev": "nodemon server.js",
-    "frontend": "cd ../frontend && npm start",
-    "build": "cd ../frontend && npm run build",
-    "install-frontend": "cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "deploy": "npm run build && git push heroku master",
+    "install-frontend": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-frontend && npm run build"
   },
   "keywords": [],
