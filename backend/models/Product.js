@@ -10,10 +10,10 @@ const ProductSchema = Schema({
   imgUrl: String,
   description: String
 }, {
-  timeStamps: true
+  timestamps: true
 })
 
-ProductSchema.methods.setImgUrl = filename => {
+ProductSchema.methods.setImgUrl = function (filename) {
   const { host, port } = appConfig
   this.imgUrl = `${host}:${port}/public/${filename}`
 }

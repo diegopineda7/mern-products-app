@@ -1,9 +1,9 @@
 const Product = require('../models/Product')
-const product = require('../models/Product')
 
 const addProduct = async (req, res) => {
   try {
-    const { name,
+    const {
+      name,
       size,
       unitaryPrice,
       description
@@ -25,7 +25,7 @@ const addProduct = async (req, res) => {
 
     res.status(201).send({ productStored })
   } catch (e) {
-    res.status(500).send({ message: e.message })
+    res.status(500).send({ error: e.message })
   }
 }
 
