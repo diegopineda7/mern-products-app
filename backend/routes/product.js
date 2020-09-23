@@ -1,7 +1,9 @@
 const express = require('express')
-const api = express.Router()
-const { addProduct } = require('../controllers/productController')
+const upload = require('../libs/storage')
+const { addProduct, getProducts } = require('../controllers/productController')
 
-api.post('/products', addProduct)
+const api = express.Router()
+api.post('/products', upload.single('image'), addProduct)
+api.get('/products', getProducts)
 
 module.exports = api

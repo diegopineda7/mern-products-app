@@ -1,3 +1,4 @@
+const Product = require('../models/Product')
 const product = require('../models/Product')
 
 const addProduct = async (req, res) => {
@@ -15,6 +16,11 @@ const addProduct = async (req, res) => {
       description
     })
 
+    if (req.file) {
+      const { filename } = req.file
+      product.setImgUrl(filename)
+    }
+
     const productStored = await product.save()
 
     res.status(201).send({ productStored })
@@ -23,6 +29,12 @@ const addProduct = async (req, res) => {
   }
 }
 
+const getProducts = async (req, res) => {
+  const products = await Product.find().lean().exec()
+  res.status(200).send({ products })
+}
+
 module.exports = {
-  addProduct
+  addProduct,
+  getProducts
 }
