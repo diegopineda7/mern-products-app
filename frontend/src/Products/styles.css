@@ -1,0 +1,8 @@
+.loading {
+  width: 100%;
+  display: flex;
+}
+
+.modal-form {
+  padding: 0 35px;
+}

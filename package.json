@@ -1,11 +1,11 @@
 {
   "name": "mern-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mongo, Express, React, Node App - Add products to BD and show them on frontend",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "start-dev": "nodemon server.js",
+    "start-dev": "nodemon server.js && cd frontend && npm start",
     "build": "cd frontend && npm run build",
     "deploy": "npm run build && git push heroku master",
     "install-frontend": "cd frontend && npm install",

@@ -31,6 +31,7 @@ const Form = ({ handleSubmit }) => {
         </Label>
         <Control>
           <Input
+            required
             placeholder='Product name'
             name='name'
             value={formValues.name}
@@ -45,6 +46,7 @@ const Form = ({ handleSubmit }) => {
         </Label>
         <Control>
           <Input
+            required
             placeholder='Product unit price'
             type='number'
             name='unitaryPrice'
@@ -60,6 +62,7 @@ const Form = ({ handleSubmit }) => {
         </Label>
         <Control>
           <Input
+            required
             placeholder='Product size'
             type='number'
             name='size'
@@ -75,6 +78,7 @@ const Form = ({ handleSubmit }) => {
         </Label>
         <Control>
           <Input
+            required
             placeholder='Product description'
             name='description'
             value={formValues.description}
@@ -89,11 +93,14 @@ const Form = ({ handleSubmit }) => {
         </Label>
         <Control>
           <input
-            type='file' ref={inputFileRef} />
+            required
+            type='file'
+            ref={inputFileRef}
+          />
         </Control>
       </Field>
 
-      <Button type='sumbit' color='primary'>Save product</Button>
+      <Button type='submit' color='primary'>Save product</Button>
     </form>
   )
 }

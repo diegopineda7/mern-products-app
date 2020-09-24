@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Modal, Container } from 'react-bulma-components'
+import '../styles.css'
 import Header from './Header'
 import AddButton from './AddButton'
 import Loading from './Loading'
@@ -14,9 +15,10 @@ const ProductLayout = () => {
 
   const loadProducts = async () => {
     const response = await getProducts()
-    if (response.status === 200)
+    if (response !== undefined && response.status === 200) {
       setProducts(response.data.products)
-    setIsLoading(false)
+      setIsLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -40,7 +42,7 @@ const ProductLayout = () => {
             ? <h2 className='title has-text-centered'>You don't have any products</h2>
             : <ListProducts products={products} />
       }
-      <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)} className='modal-form'>
         <Modal.Card>
           <Modal.Card.Head onClose={() => setIsModalOpen(false)}>
             <Modal.Card.Title>
