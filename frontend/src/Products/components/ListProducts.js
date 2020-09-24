@@ -12,7 +12,7 @@ const ListProducts = ({ products }) => {
               <Card.Content>
                 <Content>
                   <Heading>{name}</Heading>
-                  <Heading subtitle size={6}>Price: ${unitaryPrice}</Heading>
+                  <Heading subtitle size={6}>Price ${unitaryPrice}</Heading>
                   <Heading subtitle size={6}>Size: {size}</Heading>
                   <p>{description}</p>
                 </Content>
