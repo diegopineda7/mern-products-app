@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Modal, Container } from 'react-bulma-components'
-import '../styles.css'
-import Header from './Header'
-import AddButton from './AddButton'
-import Loading from './Loading'
-import Form from './Form'
-import ListProducts from './ListProducts'
+import React, { useEffect, useState } from 'react'
+import { Container, Modal } from 'react-bulma-components'
 import { getProducts, saveProduct } from '../services'
+import '../styles.css'
+import AddButton from './AddButton'
+import Form from './Form'
+import Header from './Header'
+import ListProducts from './ListProducts'
+import Loading from './Loading'
 
 const ProductLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
