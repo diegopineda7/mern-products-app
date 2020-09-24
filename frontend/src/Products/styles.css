@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.products-list {
+  padding: 10px;
+}
+
 .modal-form {
   padding: 0 35px;
 }

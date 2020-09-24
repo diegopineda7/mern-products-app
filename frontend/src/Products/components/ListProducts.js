@@ -3,7 +3,7 @@ import { Card, Columns, Content, Heading } from 'react-bulma-components'
 
 const ListProducts = ({ products }) => {
   return (
-    <Columns>
+    <Columns className='products-list'>
       {
         products.map(({ _id, name, unitaryPrice, size, description, imgUrl }) => (
           <Columns.Column size={4} key={_id}>
