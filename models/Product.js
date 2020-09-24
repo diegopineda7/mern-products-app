@@ -15,7 +15,7 @@ const ProductSchema = Schema({
 
 ProductSchema.methods.setImgUrl = function (filename) {
   const { host, port } = appConfig
-  this.imgUrl = `${host}:${port}/public/${filename}`
+  this.imgUrl = `${host}/public/${filename}`
 }
 
 module.exports = mongoose.model('Products', ProductSchema)
